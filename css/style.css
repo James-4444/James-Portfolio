@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+
+section{
+    position: relative;
+    height: 100vh;
+    background: #150B20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+section nav{
+    position: absolute;
+    top: 30px;
+    justify-content: center;
+    display: flex;
+    gap: 25px;
+    z-index: 10;
+}
+
+section nav a{
+    color: white;
+    text-decoration: none;
+}
+
+.blob:nth-child(1){
+    --angle-delay: 0s;
+    --moving-delay: 0s;
+    --color: #7B55EC;
+}
+.blob:nth-child(2){
+    --angle-delay: -5s;
+    --moving-delay: -3s;
+    --color: #FF7C1D;
+}
+.blob:nth-child(3){
+    --angle-delay: -10s;
+    --moving-delay: -6s;
+    --color: #F53232;
+}
+.blob:nth-child(4){
+    --angle-delay: -15s;
+    --moving-delay: -9s;
+    --color: #FFC01D;
+}
+.blob:nth-child(5){
+    --angle-delay: -20s;
+    --moving-delay: -12s;
+    --color: #6532F5;
+}
+
+.blob{
+    position: relative;
+    animation: angle 15s var(--angle-delay) infinite linear;
+}
+
+.blob::after{
+    content: "";
+    position: absolute;
+    width: 240px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: var(--color);
+    filter: blur(50px);
+    animation: moving 10s var(--moving-delay) infinite ease-in-out alternate;
+}
+
+@keyframes angle {
+    from{
+        transform: rotate(0deg);
+
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes moving {
+    from{
+        transform: translate(-50%, -150%);
+    }
+    to{
+        transform: translate(-50%, 50%);
+    }
+}
+
+@media (max-width: 600px) {
+    .blob::after{
+        width: 160px;
+    }
+}
+
+
+  
