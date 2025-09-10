@@ -9,23 +9,49 @@
   </head>
   <body>
     <section>
-      <div class="blobs">
+      <div class="container">
         <div class="blob"></div>
-        <div class="blob"></div>
-        <div class="blob"></div>
-        <div class="blob"></div>
-        <div class="blob"></div>
+      </div>
+      <div class="container1">
+        <div class="blob1"></div>
+      </div>
+      <div class="container2">
+        <div class="blob2"></div>
       </div>
 
       <nav>
-        <a href="#" class="active">Home</a>
-        <a href="#">About</a>
-        <a href="#">Skills</a>
-        <a href="#">Certificate</a>
-        <a href="#">Projects</a>
-        <a href="#">Contact</a>
+        <ul>
+          <li><a href="#" class="active">Home</a></li> 
+          <li><a href="#">About</a></li>
+          <li><a href="#">Skills</a></li>
+          <li><a href="#">Certificate</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
       </nav>
+
+    <div class="hero">
+      <div class="hero-text">
+        <h1>Hi, I’m Cleo James Lucernas</h1>
+        <h2>And I’m a <span class="auto-type"></span></h2>
+        <p>I'm a Web and Application Developer passionate about building user-friendly websites and scalable applications, with experience in both front-end and back-end development.</p>
+      </div>
+      <div class="hero-image">
+        <img src="images/james.jpg" alt="Cleo James Lucernas">
+      </div>
+    </div>
     </section>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <script>
+      var typed = new Typed(".auto-type",{
+        strings: ["Web Developer", "Application Developer"],
+        typeSpeed: 80,
+        backSpeed: 50,
+        loop: true
+      })
+    </script>
     
   </body>
 </html>
