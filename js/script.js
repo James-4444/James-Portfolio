@@ -83,4 +83,37 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     `;
     document.head.appendChild(style);
+
+    const roles = ["Web Developer","Application Developer"]; // Roles to type
+const roleElement = document.getElementById("auto-role");
+let roleIndex = 0;
+let charIndex = 0;
+let typing = true;
+
+function typeRole() {
+    const currentRole = roles[roleIndex];
+    
+    if (typing) {
+        roleElement.textContent += currentRole.charAt(charIndex);
+        charIndex++;
+        if (charIndex === currentRole.length) {
+            typing = false;
+            setTimeout(typeRole, 1500); // Wait before deleting
+        } else {
+            setTimeout(typeRole, 100); // Typing speed
+        }
+    } else {
+        roleElement.textContent = currentRole.substring(0, charIndex - 1);
+        charIndex--;
+        if (charIndex === 0) {
+            typing = true;
+            roleIndex = (roleIndex + 1) % roles.length; // Loop roles
+            setTimeout(typeRole, 500);
+        } else {
+            setTimeout(typeRole, 50); // Deleting speed
+        }
+    }
+}
+
+window.onload = typeRole;
 });
